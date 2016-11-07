@@ -1,0 +1,14 @@
+<div class="col-md-6 col-md-offset-4 login-content">
+	<br><br>
+    <form name="form" class="login-form" [formGroup]="testForm" (ngSubmit)="send()" method="post">
+            <label for="Nombre">Nombres:</label>
+            <input type="text" formControlName="firstName" required/>
+            <label for="Apellido">Apellidos:</label>
+            <input type="text" formControlName="lastName" required/>
+            <label for="userName">Username:</label>
+            <input type="text" formControlName="userName" required/>
+            <label for="password">Contraseña:</label>
+            <input type="password" formControlName="password" required/>
+            <button type="submit">REGISTRAR</button>
+    </form>    
+</div>

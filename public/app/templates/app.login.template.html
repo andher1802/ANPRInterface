@@ -1,0 +1,12 @@
+<div class="col-md-6 col-md-offset-4 login-content">
+	<br><br>
+    <form name="form" class="login-form" [formGroup]="loginForm" (ngSubmit)="login()" method="post">
+            <label for="username" >Usuario:</label>
+            <input type="text" name="username" formControlName="username" required/>
+            <label for="password">Contraseña:</label>
+            <input type="password" name="password" formControlName="password" required/>
+            <button type="submit">INGRESAR</button>
+    </form>
+    <a href="/signup">Registrese</a>   
+    {{credentials}}
+</div>

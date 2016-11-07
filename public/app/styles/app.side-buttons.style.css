@@ -1,0 +1,39 @@
+/* Sidebar Button*/
+#sidebar-button {
+    left: 0px;
+    width: 100%;
+    height: 800px;
+    background: #4c4944;
+}
+
+.sidebar-button-nav {
+    position: absolute;
+    top: 20px;
+    bottom: 20px;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+.sidebar-button-nav li {
+    text-indent: 0px;
+    line-height: 40px;
+    height:40px;
+}
+
+.sidebar-button-nav li button {
+    background-color: #4c4944;
+    border: none;
+    color: #4c4944;
+    padding: 0px 0px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0px;    
+    height: 35px;
+    width: 50;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

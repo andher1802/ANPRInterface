@@ -1,0 +1,45 @@
+    <!-- header -->
+    <div class="row header">
+        <div class="col-md-3">
+        </div>
+        <div class="col-md-6">
+            <img class="imagesHeader" src="Images/Header/LogoANPR-01.png" alt="LogoCVTraffic" height="41" width="160">
+        </div>
+        <div class="col-md-3">
+        </div>
+    </div>
+    <!-- end header -->
+    <div class="row">
+        <!-- sidebar-buttons -->
+        <div class="col-md-1 nopadding">
+            <side-button (myState)="getStateButton($event)"></side-button> <!-- tag for button template -->
+        </div>
+        <!-- end sidebar-buttons -->
+        <!-- sidebar-wrapper -->
+        <div class="col-md-2 nopadding {{setDisplay}}">
+            <side-bar [currentState]="setDisplay"></side-bar> <!-- tag for sidebar template -->
+        </div>
+        <!-- end sidebar-wrapper -->
+        <!-- main interface -->
+        <div class="col-md-8" style="height: 800px">
+            <div id="page-content-wrapper">
+                <div class="container-fluid">
+                    <div class="mainContent" width="480"> 
+                        <router-outlet></router-outlet>
+                    </div>
+                </div>
+            </div>
+        </div>       
+    </div>
+    <!-- end main interface -->
+    <!-- footer -->
+    <div class="row footer">
+        <div class="col-md-3"> </div>
+        <div class="col-md-6">
+            <h4 class="complementaryText">Universidad Tecnológica de Pereira - Derechos reservados 2016</h4>
+        </div>
+        <div class="col-md-3">
+            <img src="Images/footer/logoUTP.png" alt="LogoUTP" q width="70" align="right">
+        </div>
+    </div>
+    <!-- end footer -->

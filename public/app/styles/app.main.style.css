@@ -1,0 +1,53 @@
+.hiddenState {
+    display: none;    
+}
+
+.showState {
+    display: block;
+}
+
+/* Sidebar Styles */
+.nopadding {
+   padding: 0 !important;
+   margin: 0 !important;
+}
+
+.header {        
+    border-top:1px solid #4c4944;
+    border-bottom:1px solid #4c4944;
+    border-right:1px solid #4c4944;
+    border-left:1px solid #4c4944;
+    background-color: #ff9c0f;
+}
+
+img.imagesHeader{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer {        
+    border-top:1px solid #4c4944;
+    border-bottom:1px solid #4c4944;
+    border-right:1px solid #4c4944;
+    border-left:1px solid #4c4944;
+    background-color: #afe0d3;
+}
+
+h1.mainText{
+	font-size: 24px;
+    color: #4c4944;
+    text-align: center;
+    vertical-align: middle;
+}
+
+h4.complementaryText {
+	font-size: 12px;
+	font-style: normal;
+	font-variant: normal;        
+    text-align: center;
+    vertical-align: middle;
+    color: #4c4944;
+	font-weight: 500;
+	line-height: 26.4px;
+}
