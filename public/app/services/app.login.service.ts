@@ -14,16 +14,19 @@ export class loginService {
   loggedIn;
 
   constructor (private http: Http) {
+    this.loggedIn = !!localStorage.getItem('auth_token');
   };
   
   getDataServiceLogin(query:Object): Observable<Object[]> {
   let username = query['username'];
   let password = query['password'];
   let headers = new Headers();
+
   headers.append('Content-Type', 'application/json');
   let obs = this.http.post("/auth", JSON.stringify({username, password}), { headers }).map(res => res.json())
   .map((res) => {
         if (res.status) {
+          localStorage.setItem('auth_token', username);
           this.loggedIn = true;
         }
         return res;
@@ -32,6 +35,7 @@ export class loginService {
   };
 
   logout() {
+    localStorage.removeItem('auth_token');
     this.loggedIn = false;
   }
 

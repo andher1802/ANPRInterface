@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 import { loginService }	from './services/app.login.service';
@@ -11,8 +11,9 @@ import { loginService }	from './services/app.login.service';
 
 export class loginComponent{
   loginForm:FormGroup;
-  username = new FormControl("", Validators.required)
-  password = new FormControl("", Validators.required)
+  username = new FormControl("", Validators.required);
+  password = new FormControl("", Validators.required);
+  currentUser:String;
 
   constructor(private loginService: loginService, private router: Router, fb: FormBuilder){
       this.loginForm = fb.group({
@@ -21,14 +22,13 @@ export class loginComponent{
       });
   }
 
-  login():void {
-  this.loginService.getDataServiceLogin(this.loginForm['_value']).subscribe((res)=>{
+  login():void {    
+    this.loginService.getDataServiceLogin(this.loginForm['_value']).subscribe((res)=>{
     if(res['status']){
-      this.router.navigate(['/main']);
+      this.router.navigate(['/profile']);
     }
   });
-  this.loginForm.reset();
+    this.loginForm.reset();
   }
-
 
 }

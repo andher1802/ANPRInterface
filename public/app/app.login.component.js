@@ -42,7 +42,7 @@ System.register(['@angular/core', '@angular/router', '@angular/forms', './servic
                     var _this = this;
                     this.loginService.getDataServiceLogin(this.loginForm['_value']).subscribe(function (res) {
                         if (res['status']) {
-                            _this.router.navigate(['/main']);
+                            _this.router.navigate(['/profile']);
                         }
                     });
                     this.loginForm.reset();

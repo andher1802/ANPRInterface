@@ -27,6 +27,7 @@ System.register(['@angular/core', '@angular/http', 'rxjs/add/operator/catch', 'r
             loginService = (function () {
                 function loginService(http) {
                     this.http = http;
+                    this.loggedIn = !!localStorage.getItem('auth_token');
                 }
                 ;
                 loginService.prototype.getDataServiceLogin = function (query) {
@@ -38,6 +39,7 @@ System.register(['@angular/core', '@angular/http', 'rxjs/add/operator/catch', 'r
                     var obs = this.http.post("/auth", JSON.stringify({ username: username, password: password }), { headers: headers }).map(function (res) { return res.json(); })
                         .map(function (res) {
                         if (res.status) {
+                            localStorage.setItem('auth_token', username);
                             _this.loggedIn = true;
                         }
                         return res;
@@ -46,6 +48,7 @@ System.register(['@angular/core', '@angular/http', 'rxjs/add/operator/catch', 'r
                 };
                 ;
                 loginService.prototype.logout = function () {
+                    localStorage.removeItem('auth_token');
                     this.loggedIn = false;
                 };
                 loginService.prototype.isLoggedIn = function () {
