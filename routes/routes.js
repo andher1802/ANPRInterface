@@ -10,6 +10,15 @@ var appRouter = function(app) {
         });
     });
 
+    app.get("/imagesInfo", function(req, res) {
+        userModel.queryImages(req.headers, function(error, result) {
+            if(error) {
+                return res.status(400).send(error);
+            }
+            return res.send(result);
+        });
+    });
+
     app.get("/userinfo", function(req, res) {
         userModel.query(req.headers, function(error, result) {
             if(error) {

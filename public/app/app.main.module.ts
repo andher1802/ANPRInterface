@@ -9,6 +9,7 @@ import { loginComponent }   from './app.login.component';
 import { logoutComponent }   from './app.logout.component';
 import { signupComponent } from './app.signup.component';
 import { profileComponent }        from './app.profile.component';
+import { reportComponent }        from './app.report.component';
 
 import { FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { HttpModule } from '@angular/http';
@@ -35,7 +36,8 @@ import { routing } from './app.routing';
                         loginComponent,
                         signupComponent,
                         logoutComponent, 
-                        profileComponent
+                        profileComponent,
+                        reportComponent
                     ],
     providers:      [   loginService,
                         ProfileService,

@@ -1,4 +1,4 @@
-System.register(['@angular/core', '@angular/http', '@angular/common', 'rxjs/add/operator/catch', 'rxjs/add/operator/map'], function(exports_1, context_1) {
+System.register(['@angular/core', '@angular/http', '@angular/common', 'rxjs/add/operator/toPromise', 'rxjs/add/operator/catch', 'rxjs/add/operator/map'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -25,7 +25,8 @@ System.register(['@angular/core', '@angular/http', '@angular/common', 'rxjs/add/
                 common_1 = common_1_1;
             },
             function (_1) {},
-            function (_2) {}],
+            function (_2) {},
+            function (_3) {}],
         execute: function() {
             contentService = (function () {
                 function contentService(http, location, locationStrategy) {
@@ -43,6 +44,17 @@ System.register(['@angular/core', '@angular/http', '@angular/common', 'rxjs/add/
                     });
                 };
                 ;
+                contentService.prototype.getPlateByName = function (fileName) {
+                    var headers = new http_2.Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
+                    return this.http.get('http://localhost:9000/ANPR/' + fileName, { headers: headers }).map(function (res) {
+                        return res.json();
+                    }).toPromise();
+                };
+                ;
+                contentService.prototype.getRunt = function () {
+                    var headers = new http_2.Headers({ 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' });
+                    return this.http.get('http://runt-service', { headers: headers }).map(function (res) { return res.json(); });
+                };
                 contentService = __decorate([
                     core_1.Injectable(), 
                     __metadata('design:paramtypes', [http_1.Http, common_1.Location, common_1.LocationStrategy])

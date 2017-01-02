@@ -27,6 +27,18 @@ userModel.query = function(data, callback) {
             });
 };
 
+userModel.queryImages = function(data, callback) {
+    var statement = 'SELECT * FROM `' + config.couchbase.bucket + '` WHERE idimage IS NOT MISSING AND idimage = "'+data.idimage+'" LIMIT 1';
+    var query = N1qlQuery.fromString(statement).consistency(N1qlQuery.Consistency.REQUEST_PLUS);
+    db.query(query, 
+        function(error, result) {
+            if(error) {
+                return callback(error, null);
+            }
+            callback(null, result);
+            });
+};
+
 userModel.getAll = function(callback) {
     var statement = "SELECT META(users).id, firstName, lastName, userName " +
                     "FROM `" + config.couchbase.bucket + "` AS users";

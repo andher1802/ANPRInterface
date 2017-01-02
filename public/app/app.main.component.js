@@ -21,6 +21,7 @@ System.register(['@angular/core'], function(exports_1, context_1) {
             mainTemplate = (function () {
                 function mainTemplate() {
                     this.setDisplay = 'none';
+                    this.currentReport = 'test';
                 }
                 mainTemplate.prototype.getStateButton = function (arg) {
                     this.setDisplay = arg;

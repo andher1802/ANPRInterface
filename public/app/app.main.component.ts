@@ -8,12 +8,14 @@ import { Component } from '@angular/core';
 
 export class mainTemplate {
 	public setDisplay:string='none';
-	constructor(){
-		
+	public currentReport:string='test';
+
+	constructor(){		
 	}
 
 	getStateButton(arg:string){
 		this.setDisplay=arg;
 		console.log(arg);
 	}
+
 }

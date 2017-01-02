@@ -14,20 +14,30 @@
 		</div>
 		<div class="row">
 			<div class="col-md-6">
-				<h1><img src="Images/Dummies/Car03.png" alt="imagen a cargar" height="200"></h1>
+				<img 	height="200" 
+                        (mousemove)="coordinates($event)"
+                        (click)="clickImageState($event)"
+						src="Images/Dummies/Images/TestSet/{{currentImage}}" alt="imagen a cargar">
 			</div>
 			<div class="col-md-6">
-				<h1><img src="https://maps.googleapis.com/maps/api/staticmap?center=4.80,-75.71&zoom=14&size=300x200&path=weight:3%7Ccolor:blue%7Cenc:{coaHnetiVjM??_SkM??~R&key=AIzaSyA9B9XJ4PnmM_vcwPoIzFev2JHwHmF5ux8" alt="imagen a cargar" width="300" height="200"></h1>
+				<img src="https://maps.googleapis.com/maps/api/staticmap?center=4.80,-75.71&zoom=14&size=300x200&path=weight:3%7Ccolor:blue%7Cenc:{coaHnetiVjM??_SkM??~R&key=AIzaSyA9B9XJ4PnmM_vcwPoIzFev2JHwHmF5ux8" alt="imagen a cargar" width="300" height="200" >
 			    <div id="map"></div>
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-md-6">
-				<h1><button>CARGAR</button></h1>
+			<div class="col-md-6 carimage">
+				<h1>
+					<button class="content" (click)="prevImage()">ANT</button> 
+					<button class="content" (click)="nextImage()">SIG</button>
+				</h1>
 			</div>
 			<div class="col-md-6">
+				<h1><button onclick="document.getElementById('fileID').click(); return false;">CARGAR</button></h1>
+			</div>
+
+<!-- 			<div class="col-md-6">
 				<h1><button (click)="GetPlate($event)">PROCESAR</button></h1>
-			</div>
+			</div> -->
 		</div>
 		<div class="row">
 			<div class="col-md-12">
@@ -36,7 +46,8 @@
 		</div>
 		<div class="row">
 			<div class="col-md-12">
-				<h1><img src="" alt="imagen localizada" width="600" height="80"></h1>		
+				<!-- 				<h1><img id="zoom_14" src="Images/Dummies/TestSet/{{currentImage}}" alt="imagen localizada" width="600" height="80"></h1>	 -->
+				<h5><input #plateLocation class="main-content-input" value="{{location}}" type="text" [(ngModel)]="plateLocationByUser"></h5>
 			</div>
 		</div>
 		<div class="row">
@@ -46,23 +57,24 @@
 		</div>
 		<div class="row">
 			<div class="col-md-12">
-				<h5><input class="main-content-input" value="{{message}}" type="text" name="fname"></h5>
+				<h5><input #plateAnno class="main-content-input" value="{{message}}" type="text" [(ngModel)]="plateByUser"></h5>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-6">
-				<h1><button>DESCARTAR</button></h1>
+				<h1><button (click)="removeImage()">DESCARTAR</button></h1>
 			</div>
 			<div class="col-md-6">
-				<h1><button>GUARDAR</button></h1>
+				<h1><button type="submit" (click)="sendImage(plateAnno.value, plateLocation.value)">GUARDAR</button></h1>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-12">
-				<h1><button>GENERAR REPORTE</button></h1>
+				<h1><button (click)="sendCarData(plateAnno.value, plateLocation.value)">GENERAR REPORTE</button></h1>
 			</div>
 		</div>
 		</div>
 	</h1>
+	<input type="file" webkitdirectory (change)="ReadFolder($event)" id="fileID" style="visibility: hidden;">
 </div>
 </div>

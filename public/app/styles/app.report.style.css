@@ -1,0 +1,12 @@
+table, th, td {
+    border: 1px solid black;
+}
+
+th {
+    text-align: center;
+}
+
+.styledTable th {
+	background-color: #4c4944;
+    color: #f2f2f2;
+}

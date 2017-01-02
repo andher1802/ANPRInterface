@@ -1,4 +1,4 @@
-System.register(['@angular/core', '@angular/platform-browser', './app.main.component', './app.side-buttons.component', './app.side-nav-bar.component', './app.content.component', './app.login.component', './app.logout.component', './app.signup.component', './app.profile.component', "@angular/forms", '@angular/http', './services/app.login.service', './services/app.profile.service', './services/app.content.service', './guards/app.guard', './app.routing'], function(exports_1, context_1) {
+System.register(['@angular/core', '@angular/platform-browser', './app.main.component', './app.side-buttons.component', './app.side-nav-bar.component', './app.content.component', './app.login.component', './app.logout.component', './app.signup.component', './app.profile.component', './app.report.component', "@angular/forms", '@angular/http', './services/app.login.service', './services/app.profile.service', './services/app.content.service', './guards/app.guard', './app.routing'], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -10,7 +10,7 @@ System.register(['@angular/core', '@angular/platform-browser', './app.main.compo
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, platform_browser_1, app_main_component_1, app_side_buttons_component_1, app_side_nav_bar_component_1, app_content_component_1, app_login_component_1, app_logout_component_1, app_signup_component_1, app_profile_component_1, forms_1, http_1, app_login_service_1, app_profile_service_1, app_content_service_1, app_guard_1, app_routing_1;
+    var core_1, platform_browser_1, app_main_component_1, app_side_buttons_component_1, app_side_nav_bar_component_1, app_content_component_1, app_login_component_1, app_logout_component_1, app_signup_component_1, app_profile_component_1, app_report_component_1, forms_1, http_1, app_login_service_1, app_profile_service_1, app_content_service_1, app_guard_1, app_routing_1;
     var mainModule;
     return {
         setters:[
@@ -43,6 +43,9 @@ System.register(['@angular/core', '@angular/platform-browser', './app.main.compo
             },
             function (app_profile_component_1_1) {
                 app_profile_component_1 = app_profile_component_1_1;
+            },
+            function (app_report_component_1_1) {
+                app_report_component_1 = app_report_component_1_1;
             },
             function (forms_1_1) {
                 forms_1 = forms_1_1;
@@ -84,7 +87,8 @@ System.register(['@angular/core', '@angular/platform-browser', './app.main.compo
                             app_login_component_1.loginComponent,
                             app_signup_component_1.signupComponent,
                             app_logout_component_1.logoutComponent,
-                            app_profile_component_1.profileComponent
+                            app_profile_component_1.profileComponent,
+                            app_report_component_1.reportComponent
                         ],
                         providers: [app_login_service_1.loginService,
                             app_profile_service_1.ProfileService,
